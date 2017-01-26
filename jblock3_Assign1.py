@@ -41,3 +41,8 @@ elif classCode == 'W':
         kmCharge = 0.30 * (avgDrivenPerWeek - 2000)     # - 2000 to ensure calculation of only kms above 2000 km per week limit
         addCharge = 100 * weeksRented
     totalCharge = baseCharge + kmCharge + addCharge
+
+# Code for entering wrong class code
+
+else:
+    print('Sorry {}, but {} is an invalid classification code.'.format(renterName, classCode))
