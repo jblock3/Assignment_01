@@ -17,10 +17,10 @@ if classCode == 'B':     # For budgeted rental
     kmCharge = 0.30 * kmDriven
     totalCharge = baseCharge + kmCharge
 elif classCode == 'D':
-    avgKmPerDay = kmDriven / daysRented
+    avgKmPerDay = kmDriven / daysRented     # Calculation of average Kms driven per day during rental period
     baseCharge = 50 * daysRented
     if avgKmPerDay <= 100:
         kmCharge = 0.00
     else:
-        kmCharge = 0.30 * (kmDriven - 100)
+        kmCharge = 0.30 * (kmDriven - 100)     # - 100 to ensure calculation of only Kms above 100km limit
     totalCharge = baseCharge + kmCharge
