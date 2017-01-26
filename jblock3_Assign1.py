@@ -24,3 +24,17 @@ elif classCode == 'D':
     else:
         kmCharge = 0.30 * (kmDriven - 100)     # - 100 to ensure calculation of only Kms above 100km limit
     totalCharge = baseCharge + kmCharge
+elif classCode == 'W':
+    weeksRented = (daysRented // 7) + 1
+    avgDrivenPerWeek = kmDriven / weeksRented
+    baseCharge = 200 * weeksRented
+    if avgDrivenPerWeek <= 1000:
+        kmCharge = 0.00
+        addCharge = 0.00     # Additional charges
+    elif avgDrivenPerWeek > 1000 and avgDrivenPerWeek <= 2000:
+        kmCharge = 0.00
+        addCharge = 50 * weeksRented
+    else:
+        kmCharge = 0.30 * (avgDrivenPerWeek - 2000)     # - 2000 to ensure calculation of only kms above 2000 km per week limit
+        addCharge = 100 * weeksRented
+    totalCharge = baseCharge + kmCharge + addCharge
