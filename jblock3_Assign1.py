@@ -38,7 +38,7 @@ elif classCode == 'W':
         kmCharge = 0.00
         addCharge = 50 * weeksRented
     else:
-        kmCharge = 0.30 * (avgDrivenPerWeek - 2000)     # - 2000 to ensure calculation of only kms above 2000 km per week limit
+        kmCharge = (0.30 * (avgDrivenPerWeek - 2000)) * weeksRented     # - 2000 to ensure calculation of only kms above 2000 km per week limit
         addCharge = 100 * weeksRented
     totalCharge = baseCharge + kmCharge + addCharge
 
