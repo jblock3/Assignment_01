@@ -46,3 +46,14 @@ elif classCode == 'W':
 
 else:
     print('Sorry {}, but {} is an invalid classification code.'.format(renterName, classCode))
+
+# Code for final output statements
+
+print('Summary:')
+print()
+print('Name of vehicle renter: %s' % renterName)
+print('Number of days vehicle rented: {}'.format(daysRented))
+print('Initial odometer reading on rented vehicle: {} kms'.format(initOdometer))
+print('Final odometer reading on rented vehicle: {} kms'.format(finOdometer))
+print('Number of kilometres driven during rental period: %d' % kmDriven)
+print('\n Final billing cost: $%.2f' % totalCharge)
