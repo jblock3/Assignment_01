@@ -1,6 +1,6 @@
 # Initial Prompts
 
-renterName = input('Please enter your full name: ')
+renterName = (input('Please enter your full name: ')).upper()
 classCode = (input('Please enter your rental classification code (i.e. B for budget, D for Daily, and W for weekly): ')).upper()
 daysRented = int(input('How many days did you rent your vehicle for? '))
 initOdometer = int(input('What was your vehicle\'s initial odometer reading (in kms)? '))     # Initial odometer reading
@@ -45,15 +45,17 @@ elif classCode == 'W':
 # Code for entering wrong class code
 
 else:
+    print()
     print('Sorry {}, but {} is an invalid classification code.'.format(renterName, classCode))
 
 # Code for final output statements
 
-print('Summary:')
-print()
-print('Name of vehicle renter: %s' % renterName)
-print('Number of days vehicle rented: {}'.format(daysRented))
-print('Initial odometer reading on rented vehicle: {} kms'.format(initOdometer))
-print('Final odometer reading on rented vehicle: {} kms'.format(finOdometer))
-print('Number of kilometres driven during rental period: %d' % kmDriven)
-print('\n Final billing cost: $%.2f' % totalCharge)
+if classCode == 'B' or classCode == 'D' or classCode == 'W':
+    print('\nSummary:')
+    print()
+    print('Name of vehicle renter: %s' % renterName)
+    print('Number of days vehicle rented: {}'.format(daysRented))
+    print('Initial odometer reading on rented vehicle: {} kms'.format(initOdometer))
+    print('Final odometer reading on rented vehicle: {} kms'.format(finOdometer))
+    print('Number of kilometres driven during rental period: %d' % kmDriven)
+    print('\n Final billing cost: $%.2f' % totalCharge)
