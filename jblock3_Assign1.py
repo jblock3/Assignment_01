@@ -1,4 +1,9 @@
-# Initial Prompts
+##
+# This program was written by Jamie Block (Student number: 250777666)
+# The program is designed to calculate rental costs for a car rental company.
+#
+
+# Initial Prompts:
 
 renterName = (input('Please enter your full name: ')).upper()
 classCode = (input('Please enter your rental classification code (i.e. B for budget, D for Daily, and W for weekly): ')).upper()
@@ -6,11 +11,11 @@ daysRented = int(input('How many days did you rent your vehicle for? '))
 initOdometer = int(input('What was your vehicle\'s initial odometer reading (in kms)? '))     # Initial odometer reading
 finOdometer = int(input('What was your vehicle\'s final odometer reading (in kms)? '))     # Final odometer reading
 
-# Formula for kilometres driven during rental period
+# Formula for kilometres driven during rental period:
 
 kmDriven = finOdometer - initOdometer
 
-# Calculations based on the three possible class codes
+# Calculations based on the three possible class codes:
 
 if classCode == 'B':     # For budgeted rental
     baseCharge = 20 * daysRented
@@ -38,17 +43,18 @@ elif classCode == 'W':
         kmCharge = 0.00
         addCharge = 50 * weeksRented
     else:
-        kmCharge = (0.30 * (avgDrivenPerWeek - 2000)) * weeksRented     # - 2000 to ensure calculation of only kms above 2000 km per week limit
+        kmCharge = (0.30 * (avgDrivenPerWeek - 2000)) * weeksRented     # - 2000 to ensure calculation of only kms above 2000 km per week limit:
+
         addCharge = 100 * weeksRented
     totalCharge = baseCharge + kmCharge + addCharge
 
-# Code for entering wrong class code
+# Code for entering wrong class code:
 
 else:
     print()
     print('Sorry {}, but {} is an invalid classification code.'.format(renterName, classCode))
 
-# Code for final output statements
+# Code for final output statements:
 
 if classCode == 'B' or classCode == 'D' or classCode == 'W':
     print('\nSummary:')
